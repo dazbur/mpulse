@@ -1,7 +1,8 @@
 import sys, os, time, atexit
+import logging
 from signal import SIGTERM 
 
-class Daemon:
+class Daemon(object):
     """
     A generic daemon class.
     
@@ -9,8 +10,9 @@ class Daemon:
     Kindly contributed by Sander Marechal
     http://www.jejik.com/articles/2007/02/a_simple_unix_linux_daemon_in_python/
     """
-    def __init__(self, pidfile, stdin='/dev/null', stdout='/dev/null',\ 
-     stderr='/dev/null'):
+    def __init__(self, pidfile, stdin='/dev/null', stdout='/dev/null',\
+        stderr='/dev/null'):
+        
         self.stdin = stdin
         self.stdout = stdout
         self.stderr = stderr
@@ -131,3 +133,4 @@ class Daemon:
         It will be called after the process has been daemonized by start() 
         or restart().
         """
+        pass
