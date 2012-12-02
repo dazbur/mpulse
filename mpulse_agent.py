@@ -35,7 +35,7 @@ class MPulseAgent():
 
     def parse_config(self,config_file, configstream):
         config = ConfigParser.RawConfigParser()
-        # This is kinda ugly, but allow to send strings instead of real files
+        # This is kinda ugly, but allows to send strings instead of real files
         # in unit tests
         if configstream:
             config.readfp(io.BytesIO(configstream))
